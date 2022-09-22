@@ -196,47 +196,17 @@ principais comandos:
 <hr>
 
 <H3> Tipos de dados </H3> 
-
 <TABLE> 
-<TR> <TD> DATA TYPE </TD> </TR>
-<TR> <TD> SPEC </TD> </TR>
- 
- 
-<TR> <TD>  CHAR </TD> </TR>
-<TR> <TD> STRING(0-255) </TD> 
-
-</TR>
- 
- 
-<TR> <TD>  VARCHAR </TD> </TR>
-<TR> <TD> STRING(0-255) </TD> </TR>
- 
- <TR> <TD>  TINYTEXT </TD> </TR>
-<TR> <TD> STRING(0-255) </TD> </TR>
-
- <TR> <TD>  TEXT </TD> </TR>
-<TR> <TD> STRING(0-65535) </TD> </TR>
-
- <TR> <TD>  TINYINT </TD> </TR>
-<TR> <TD> INTEGER(-127 ate 127) </TD> </TR>
-
- <TR> <TD>  INT </TD> </TR>
-<TR> <TD> INTEGER(-2147483648  ate 2147483647) </TD> </TR>
-
- <TR> <TD>  FLOAT </TD> </TR>
-<TR> <TD> DECIMAL( 23 DIGITOS) </TD> </TR>
-
- <TR> <TD>  DATE </TD> </TR>
-<TR> <TD> YYYY-MM-DD </TD> </TR>
-
- <TR> <TD>  DATETIME </TD> </TR>
-<TR> <TD> YYYY-MM-DD HH:MM:SS </TD> </TR>
-</TABLE>
-
- <TR> <TD>  ENUM </TD> </TR>
-<TR> <TD> uma das opções listadas entre as 'aspas simples' </TD> </TR>
-</TABLE>
-
- <TR> <TD>  BOOLEAN </TD> </TR>
-<TR> <TD> 1 ou 0 (true or false) </TD> </TR>
+<TR> <TD> DATA TYPE </TD> <TD> SPEC </TD> </TR>
+<TR> <TD>  CHAR </TD> <TD> STRING(0-255) </TD> </TR>
+<TR> <TD>  VARCHAR </TD> <TD> STRING(0-255) </TD> </TR>
+<TR> <TD>  TINYTEXT </TD> <TD> STRING(0-255) </TD>  </TR>
+<TR> <TD>  TEXT </TD> </TR> <TD> STRING(0-65535) </TD>  </TR>
+<TR> <TD>  TINYINT </TD><TR> <TD> INTEGER(-127 ate 127) </TD> </TR>
+<TR> <TD>  INT </TD> <TD> INTEGER(-2147483648  ate 2147483647) </TD> </TR>
+<TR> <TD>  FLOAT </TD> <TD> DECIMAL( 23 DIGITOS) </TD> </TR>
+<TR> <TD>  DATE </TD> <TD> YYYY-MM-DD </TD> </TR>
+<TR> <TD>  DATETIME </TD> <TD> YYYY-MM-DD HH:MM:SS </TD> </TR>
+<TR> <TD>  ENUM </TD> <TD> uma das opções listadas entre as 'aspas simples' </TD> </TR>
+<TR> <TD>  BOOLEAN </TD> <TD> 1 ou 0 (true or false) </TD> </TR>
 </TABLE>
