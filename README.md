@@ -198,45 +198,44 @@ principais comandos:
 <H3> Tipos de dados </H3> 
 
 <TABLE> 
-<TR> <TD> DATA TYPE </TD> </TR>
-<TR> <TD> SPEC </TD> </TR>
- 
- 
-<TR> <TD>  CHAR </TD> </TR>
-<TR> <TD> STRING(0-255) </TD> 
-
-</TR>
- 
- 
-<TR> <TD>  VARCHAR </TD> </TR>
-<TR> <TD> STRING(0-255) </TD> </TR>
- 
- <TR> <TD>  TINYTEXT </TD> </TR>
-<TR> <TD> STRING(0-255) </TD> </TR>
-
- <TR> <TD>  TEXT </TD> </TR>
-<TR> <TD> STRING(0-65535) </TD> </TR>
-
- <TR> <TD>  TINYINT </TD> </TR>
-<TR> <TD> INTEGER(-127 ate 127) </TD> </TR>
-
- <TR> <TD>  INT </TD> </TR>
-<TR> <TD> INTEGER(-2147483648  ate 2147483647) </TD> </TR>
-
- <TR> <TD>  FLOAT </TD> </TR>
-<TR> <TD> DECIMAL( 23 DIGITOS) </TD> </TR>
-
- <TR> <TD>  DATE </TD> </TR>
-<TR> <TD> YYYY-MM-DD </TD> </TR>
-
- <TR> <TD>  DATETIME </TD> </TR>
-<TR> <TD> YYYY-MM-DD HH:MM:SS </TD> </TR>
+<TR> <TD> DATA TYPE </TD> <TD> SPEC </TD> </TR>
+<TR> <TD>  CHAR </TD> <TD> STRING(0-255) </TD> </TR>
+<TR> <TD>  VARCHAR </TD> <TD> STRING(0-255) </TD> </TR>
+<TR> <TD>  TINYTEXT </TD> <TD> STRING(0-255) </TD>  </TR>
+<TR> <TD>  TEXT </TD> <TD> STRING(0-65535) </TD>  </TR>
+<TR> <TD>  TINYINT </TD> <TD> INTEGER(-127 ate 127) </TD> </TR>
+<TR> <TD>  INT </TD> <TD> INTEGER(-2147483648  ate 2147483647) </TD> </TR>
+<TR> <TD>  FLOAT </TD> <TD> DECIMAL( 23 DIGITOS) </TD> </TR>
+<TR> <TD>  DATE </TD> <TD> YYYY-MM-DD </TD> </TR>
+<TR> <TD>  DATETIME </TD> <TD> YYYY-MM-DD HH:MM:SS </TD> </TR>
+<TR> <TD>  ENUM </TD> <TD> uma das opções listadas entre as 'aspas simples' </TD> </TR>
+<TR> <TD>  BOOLEAN </TD> <TD> 1 ou 0 (true or false) </TD> </TR>
 </TABLE>
 
- <TR> <TD>  ENUM </TD> </TR>
-<TR> <TD> uma das opções listadas entre as 'aspas simples' </TD> </TR>
-</TABLE>
+<HR>
+<H3> BANCO DE DADOS NoSQL </H3>
 
- <TR> <TD>  BOOLEAN </TD> </TR>
-<TR> <TD> 1 ou 0 (true or false) </TD> </TR>
-</TABLE>
+
+atualmente os Bancos de  dados NoSQL tem ganhado força no mercado de softwares e dispositivos Web, além de jogos, por ter uma grande flexibilidade, escalabilidade a alta performance, esse tipo de banco de dados pode ser uma ótima escolha para implementação. 
+<br>
+<br>
+ <ul>
+ <li> <STRONG> FLEXIBILIDADE :</STRONG> 
+os bancos de dados não relacionais costumam ter uma flexibilidade que permite uma maior facilidade de implementação em alguns casos e até uma melhor curva de aprendizado, uma vez que não é necessário um schema para trabalhar com estes BDD </li> 
+<br><br>
+ <li> <STRONG> ESCALABILIDADE :</STRONG> 
+ usados geralmente para grande numero de informações, costumam ser a melhor escolha para aplicações com grande numero de dados. 
+</li>
+<br><br>
+
+ <li> <STRONG> PERFORMANCE :</STRONG> 
+Geralmente são escolhas muito funcionais para o desenvolvimento de APIS 
+</li>
+<br><br>
+
+
+ MongoDB é um banco de dados não relacional de documentos, utilizando o modelo JSON (javascript) ou até mesmo um xml.
+
+
+
+ <a scr="https://www.mongodb.com/docs/manual/tutorial/query-documents/">documentação queries mongoDB </a>
