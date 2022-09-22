@@ -211,6 +211,7 @@ principais comandos:
 <TR> <TD>  ENUM </TD> <TD> uma das opções listadas entre as 'aspas simples' </TD> </TR>
 <TR> <TD>  BOOLEAN </TD> <TD> 1 ou 0 (true or false) </TD> </TR>
 </TABLE>
+<<<<<<< HEAD
 
 <HR>
 <H3> BANCO DE DADOS NoSQL </H3>
@@ -239,3 +240,5 @@ Geralmente são escolhas muito funcionais para o desenvolvimento de APIS
 
 
  <a scr="https://www.mongodb.com/docs/manual/tutorial/query-documents/">documentação queries mongoDB </a>
+=======
+>>>>>>> 80147c2c23ec9bfaf942cb1ff9cdd063cf5701e6
