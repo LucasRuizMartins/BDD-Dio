@@ -196,13 +196,14 @@ principais comandos:
 <hr>
 
 <H3> Tipos de dados </H3> 
+
 <TABLE> 
 <TR> <TD> DATA TYPE </TD> <TD> SPEC </TD> </TR>
 <TR> <TD>  CHAR </TD> <TD> STRING(0-255) </TD> </TR>
 <TR> <TD>  VARCHAR </TD> <TD> STRING(0-255) </TD> </TR>
 <TR> <TD>  TINYTEXT </TD> <TD> STRING(0-255) </TD>  </TR>
-<TR> <TD>  TEXT </TD> </TR> <TD> STRING(0-65535) </TD>  </TR>
-<TR> <TD>  TINYINT </TD><TR> <TD> INTEGER(-127 ate 127) </TD> </TR>
+<TR> <TD>  TEXT </TD> <TD> STRING(0-65535) </TD>  </TR>
+<TR> <TD>  TINYINT </TD> <TD> INTEGER(-127 ate 127) </TD> </TR>
 <TR> <TD>  INT </TD> <TD> INTEGER(-2147483648  ate 2147483647) </TD> </TR>
 <TR> <TD>  FLOAT </TD> <TD> DECIMAL( 23 DIGITOS) </TD> </TR>
 <TR> <TD>  DATE </TD> <TD> YYYY-MM-DD </TD> </TR>
