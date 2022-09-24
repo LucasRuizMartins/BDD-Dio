@@ -1,6 +1,7 @@
 
- -- drop database oficina_mecanica;
+-- drop database oficina_mecanica;
 CREATE DATABASE oficina_mecanica ; 
+
 USE oficina_mecanica; 
 
 
@@ -146,6 +147,9 @@ INSERT INTO mechanical_pieces (piece_name, quantity, price) values
 
 
 
+
+
+
 CREATE TABLE labor_price(
 id_labor_price INT PRIMARY KEY AUTO_INCREMENT, 
 value_base FLOAT DEFAULT 100.0,
@@ -167,14 +171,108 @@ CREATE TABLE service_order(
 id_service_order INT PRIMARY KEY AUTO_INCREMENT, 
 service_start_date DATE,
 service_preview_conclusion_date DATE, 
-total_value FLOAT,
 service_status ENUM('COTAÇÃO','PROCESSAMENTO','CONCLUIDO','NEGADO'),
 team_in_service INT, 
 vehicle_plate CHAR(8),
 labor_price_id INT,
-CONSTRAINT FK_team_service FOREIGN KEY(team_in_service )  REFERENCES team_in_service(mechanical_team_id) 
+CONSTRAINT FK_SO_team_service FOREIGN KEY(team_in_service )  REFERENCES team_in_service(mechanical_team_id),
+CONSTRAINT FK_SO_labor_price FOREIGN KEY(labor_price_id )  REFERENCES labor_price(id_labor_price)
  ); 
+ 
+ 
+-- total_value FLOAT,
+
 
 ALTER TABLE labor_price auto_increment = 1;
+desc service_order;
 
+INSERT INTO service_order (service_start_date, service_preview_conclusion_date,service_status,team_in_service,vehicle_plate, labor_price_id) VALUES 
+('2022-09-20', '2022-09-24', 'PROCESSAMENTO', 1 , 'ADI_4141',1  ),
+('2022-09-20', NULL , 'COTAÇÃO', 3  ,'ABC-4477',2  ),
+('2022-07-15', '2022-07-25','CONCLUIDO'  , 2 , 'ADC-4579',3  ),
+('2022-08-15', '2022-08-20'  ,'CONCLUIDO' , 2, 'ADC-4579',3  ),
+('2022-06-08', '2022-07-18'  ,'CONCLUIDO' , 2, 'ADC-4579',3  ),
+('2022-02-08',null , 'CONCLUIDO', 4 , 'ADC-4579',3  );
+
+
+ CREATE TABLE mechanical_pieces_in_service (
+    mechanical_pieces_id INT, 
+    id_service_order INT ,
+    
+    CONSTRAINT fk_PS_mechanical_pieces  FOREIGN KEY(mechanical_pieces_id) REFERENCES mechanical_pieces(mechanical_pieces_id),
+    CONSTRAINT fk_PS_service_order  FOREIGN KEY(id_service_order) REFERENCES service_order(id_service_order)
+ ); 
+ 
+ INSERT INTO mechanical_pieces_in_service (mechanical_pieces_id,id_service_order) VALUES 
+ (5,1),
+ (1,2),
+ (2,3),
+ (3,4),
+ (4,5),
+ (5,6);
+ 
+
+ 
+SELECT * FROM mechanical_pieces;
+SELECT * FROM tb_vehicle;
+SELECT * FROM labor_price;
+SELECT * FROM team_in_service;
+SELECT * FROM tb_mechanical;
+SELECT * FROM mechanical_team;
+SELECT * FROM service_order;
+SELECT * FROM mechanical_pieces;
+
+-- CONFERIR ESPECIALIDADE DOS TIMES
+SELECT especiality, team_name, team_id
+FROM team_in_service t_s
+INNER JOIN tb_mechanical m
+ON m.mechanical_id = t_s.mechanical_id
+INNER JOIN mechanical_team m_s
+ON m_s.team_id = t_s.mechanical_team_id
+ORDER BY team_id;
+
+
+-- VALOR TOTAL DE UM SERVIÇO
+
+SELECT team_name, service_type, vehicle_plate, service_status, service_preview_conclusion_date, SUM(value_base + specialization_value + price) AS valor_total
+
+FROM service_order S_O
+INNER JOIN mechanical_team M_S
+ON M_S.team_id = S_O.team_in_service
+INNER JOIN labor_price L_S
+ON L_S.id_labor_price = S_O.labor_price_id
+INNER JOIN mechanical_pieces_in_service M_P_S
+ON M_P_S.id_service_order = S_O.id_service_order
+INNER JOIN mechanical_pieces M_P
+ON M_P.mechanical_pieces_id = M_P_S.mechanical_pieces_id
+GROUP BY  S_O.id_service_order
+ORDER BY S_O.id_service_order;
+
+ 
+ 
+ -- VALORES TOTAL POR MÊS 
+SELECT DATE_FORMAT(`service_start_date`,'%M') `month`, SUM(value_base + specialization_value + price) AS lucro_do_mes
+
+FROM service_order S_O
+INNER JOIN mechanical_team M_S
+ON M_S.team_id = S_O.team_in_service
+INNER JOIN labor_price L_S
+ON L_S.id_labor_price = S_O.labor_price_id
+INNER JOIN mechanical_pieces_in_service M_P_S
+ON M_P_S.id_service_order = S_O.id_service_order
+INNER JOIN mechanical_pieces M_P
+ON M_P.mechanical_pieces_id = M_P_S.mechanical_pieces_id
+GROUP BY  DATE_FORMAT(`service_start_date`, '%M');
+
+-- 
+
+SELECT * 
+FROM mechanical_pieces_in_service M_P_S
+INNER JOIN mechanical_pieces M_P
+ON M_P.mechanical_pieces_id = M_P_S.mechanical_pieces_id;
+
+
+
+
+ 
  
